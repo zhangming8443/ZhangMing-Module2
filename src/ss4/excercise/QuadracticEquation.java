@@ -3,7 +3,9 @@ package ss4.excercise;
 import java.util.Scanner;
 
 public class QuadracticEquation {
-    double a, b, c;
+    double a;
+    double b;
+    double c;
 
     public QuadracticEquation() {
     }

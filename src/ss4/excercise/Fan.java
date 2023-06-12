@@ -1,11 +1,11 @@
 package ss4.excercise;
 
 public class Fan {
-    private static final byte slow = 1;
-    private static final byte medium = 2;
-    private static final byte fast = 3;
+    private static final byte SLOW = 1;
+    private static final byte MEDIUM = 2;
+    private static final byte FAST = 3;
 
-    private int speed = slow;
+    private int speed = SLOW;
 
     private boolean on = false;
     private double radius = 5;
@@ -72,8 +72,8 @@ public class Fan {
     public static void main(String[] args) {
         //Đối tượng Fan 1: Gán giá trị lớn nhất cho speed, radius là 10, color là yellow và quạt ở trạng thái bật.
         //Đối tượng Fan 2: Gán giá trị trung bình cho speed, radius là 5, color là blue và quạt ở trạng thái tắt
-        Fan fan = new Fan(fast, true, 10, "yellow");
-        Fan fan1 = new Fan(medium, false, 5, "blue");
+        Fan fan = new Fan(FAST, true, 10, "yellow");
+        Fan fan1 = new Fan(MEDIUM, false, 5,    "blue");
         System.out.println(fan.toString());
         System.out.println(fan1.toString());
     }
