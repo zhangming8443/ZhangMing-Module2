@@ -12,6 +12,9 @@ public class Circle {
         this.radius = radius;
     }
 
+    public Circle(double v, String indigo, boolean b) {
+    }
+
     public double getRadius() {
         return radius;
     }
