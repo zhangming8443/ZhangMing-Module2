@@ -1,6 +1,6 @@
-package ss6.practice.Shape;
+package ss6.practice.shape;
 
-public class Rectangle extends Shape {
+public class Rectangle extends ShapeS6 {
     private double width = 1.0;
     private double length = 1.0;
 

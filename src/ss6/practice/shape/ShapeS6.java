@@ -1,13 +1,13 @@
-package ss6.practice.Shape;
+package ss6.practice.shape;
 
-public class Shape {
+public abstract class ShapeS6 {
     private String color = "green";
     private boolean filled = true;
 
-    public Shape() {
+    public ShapeS6() {
     }
 
-    public Shape(String color, boolean filled) {
+    public ShapeS6(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
@@ -35,4 +35,8 @@ public class Shape {
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
+
+    public abstract double getArea();
+
+    public abstract double getPerimeter();
 }

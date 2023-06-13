@@ -1,4 +1,4 @@
-package ss6.practice.Shape;
+package ss6.practice.shape;
 
 public class RectangleTest {
     public static void main(String[] args) {

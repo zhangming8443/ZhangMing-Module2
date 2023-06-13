@@ -1,4 +1,4 @@
-package ss6.practice.Shape;
+package ss6.practice.shape;
 
 public class Square extends Rectangle {
     public Square() {

@@ -1,17 +1,12 @@
-package ss6.practice.Shape;
+package ss7.excercise.interface_resizeable;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements IResizeable {
     private double radius = 1.0;
 
     public Circle() {
     }
 
     public Circle(double radius) {
-        this.radius = radius;
-    }
-
-    public Circle(double radius, String color, boolean filled) {
-        super(color, filled);
         this.radius = radius;
     }
 
@@ -23,19 +18,19 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
+
+    @Override
+    public void resize(double percent) {
+        radius *= (1 + percent / 100);
+    }
+
+    @Override
     public double getArea() {
         return radius * radius * Math.PI;
     }
 
+    @Override
     public double getPerimeter() {
         return 2 * radius * Math.PI;
-    }
-
-    @Override
-    public String toString() {
-        return "A Circle with radius = "
-                + getRadius()
-                + ", which is a subclass of "
-                + super.toString();
     }
 }
