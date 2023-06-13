@@ -1,4 +1,4 @@
-package ss6.exercise.Point2D;
+package ss6.exercise.point2d;
 
 import java.util.Arrays;
 

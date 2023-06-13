@@ -1,4 +1,4 @@
-package ss6.exercise.Circle;
+package ss6.exercise.circle;
 
 public class CircleTest {
     public static void main(String[] args) {

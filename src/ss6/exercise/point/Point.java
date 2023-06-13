@@ -1,4 +1,4 @@
-package ss6.exercise.Point;
+package ss6.exercise.point;
 
 public class Point {
     private float x;

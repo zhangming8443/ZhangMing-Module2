@@ -1,4 +1,4 @@
-package ss6.exercise.Point2D;
+package ss6.exercise.point2d;
 
 public class Point2DTest {
     public static void main(String[] args) {

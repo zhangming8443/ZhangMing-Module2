@@ -1,4 +1,4 @@
-package ss6.exercise.Circle;
+package ss6.exercise.circle;
 
 public class Cylinder extends Circle {
     private double height = 1.0;
