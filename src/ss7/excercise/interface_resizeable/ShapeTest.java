@@ -20,18 +20,19 @@ public class ShapeTest {
                 System.out.print("After resizing (" + percent + "% Area): ");
                 System.out.println("Area = " + shape.getArea() + " and Perimeter = " + shape.getPerimeter());
             }
-            if (shape instanceof Rectangle) {
-                System.out.println("RECTANGLE");
-                shape.resize(percent);
-                System.out.print("After resizing (" + percent + "% Area): ");
-                System.out.println("Area = " + shape.getArea() + " and Perimeter = " + shape.getPerimeter());
-            }
             if (shape instanceof Square) {
                 System.out.println("SQUARE");
                 shape.resize(percent);
                 System.out.print("After resizing (" + percent + "% Area): ");
                 System.out.println("Area = " + shape.getArea() + " and Perimeter = " + shape.getPerimeter());
             }
+            else if (shape instanceof Rectangle) {
+                System.out.println("RECTANGLE");
+                shape.resize(percent);
+                System.out.print("After resizing (" + percent + "% Area): ");
+                System.out.println("Area = " + shape.getArea() + " and Perimeter = " + shape.getPerimeter());
+            }
+
         }
     }
 }
