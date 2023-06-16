@@ -1,18 +1,19 @@
-package practiceAll;
+package practice_all.mvc_practice.model;
 
 public class Student {
     private int id;
     private String name;
+    private String date;
     private boolean gender;
     private String className;
-
 
     public Student() {
     }
 
-    public Student(int id, String name, boolean gender, String className) {
+    public Student(int id, String name, String date, boolean gender, String className) {
         this.id = id;
         this.name = name;
+        this.date = date;
         this.gender = gender;
         this.className = className;
     }
@@ -31,6 +32,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public boolean isGender() {
@@ -54,9 +63,9 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", date='" + date + '\'' +
                 ", gender=" + gender +
                 ", className='" + className + '\'' +
                 '}';
     }
 }
-
