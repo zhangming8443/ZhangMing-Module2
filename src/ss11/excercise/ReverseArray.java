@@ -1,4 +1,4 @@
-package ss11.excercise.reverse_array;
+package ss11.excercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;

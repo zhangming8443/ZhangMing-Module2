@@ -1,4 +1,4 @@
-package ss11.excercise.reverse_array;
+package ss11.excercise;
 
 import java.util.Scanner;
 import java.util.Stack;
