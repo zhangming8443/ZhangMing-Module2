@@ -33,6 +33,24 @@ public class ProductService implements IProductService {
 
     @Override
     public void delete() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the ID to delete: ");
+        int idDelete = Integer.parseInt(scanner.nextLine());
+        List<Product> productList = productRepo.getProductList();
+        boolean isCheckID = false;
+        for (Product p : productList) {
+            if (p.getId() == idDelete) {
+                productList.remove(p);
+                isCheckID = true;
+                break;
+            }
+        }
+        if (isCheckID) {
+            System.out.println("Product ID " + idDelete + " removed !");
+        } else {
+            System.out.println("The id doesn't exist");
+
+        }
 
     }
 
@@ -40,7 +58,7 @@ public class ProductService implements IProductService {
     public void edit() {
         Scanner scanner = new Scanner(System.in);
         display();
-        System.out.println("Enter the id to edit: ");
+        System.out.println("Enter the ID to edit: ");
         int idStudentEdit = Integer.parseInt(scanner.nextLine());
         Product productEdit = null;
         List<Product> productList = productRepo.getProductList();

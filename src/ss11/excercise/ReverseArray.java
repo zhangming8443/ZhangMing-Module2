@@ -12,13 +12,6 @@ public class ReverseArray<E> {
         for (int i = 0; i < arr.length; i++) {
             stack.push(arr[i]);
         }
-//        for (int i = 0; i < arr.length; i++) {
-//            newStack.push(stack.pop());
-//        }
-//        System.out.println(newStack);
-
-//        dont declare newStack
-//         loop2
         for (int i = 0; i < arr.length; i++) {
             arr[i] = stack.peek();
             stack.pop();
