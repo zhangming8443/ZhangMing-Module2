@@ -17,8 +17,8 @@ public class ProductController {
                     + "\n2.Add"
                     + "\n3.Delete"
                     + "\n4.Edit"
-                    + "\n5.Sort Price Ascending"
-                    + "\n6.Sort Price Descending"
+                    + "\n5.Search"
+                    + "\n6.Sort"
                     + "\n7.Exit");
             String choose = scanner.nextLine();
             switch (choose) {
@@ -39,12 +39,12 @@ public class ProductController {
                     productService.edit();
                     break;
                 case "5":
-                    System.out.println("---PRICE ASCENDING---");
-                    productService.sortPriceAscending();
+                    System.out.println("---SEARCH---");
+                    productService.search();
                     break;
                 case "6":
-                    System.out.println("---PRICE DESCENDING---");
-                    productService.sortPriceDescending();
+                    System.out.println("---SORT---");
+                    productService.sort();
                     break;
                 case "7":
                     System.exit(0);

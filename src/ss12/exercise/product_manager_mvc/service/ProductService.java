@@ -84,12 +84,16 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void sortPriceAscending() {
+    public void search() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the ID to check product");
+        int id = Integer.parseInt(scanner.nextLine());
+        productRepo.search(id);
 
     }
 
     @Override
-    public void sortPriceDescending() {
-
+    public void sort() {
+        productRepo.sort();
     }
 }

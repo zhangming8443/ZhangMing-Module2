@@ -1,6 +1,6 @@
 package ss12.exercise.product_manager_mvc.model;
 
-public class Product {
+public class Product  {
     private int id;
     private String productName;
     private int price;
@@ -46,4 +46,6 @@ public class Product {
                 ", price=" + price +
                 '}';
     }
+
+
 }

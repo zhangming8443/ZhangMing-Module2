@@ -1,9 +1,9 @@
 package ss12.exercise.product_manager_mvc.repository;
 
 import ss12.exercise.product_manager_mvc.model.Product;
+import ss12.exercise.product_manager_mvc.model.SortProductListByPrice;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ProductRepo implements IProductRepo {
     private static List<Product> productList = new ArrayList<>();
@@ -30,7 +30,7 @@ public class ProductRepo implements IProductRepo {
 
     @Override
     public void delete(Product product) {
-
+        productList.remove(product);
     }
 
     @Override
@@ -44,12 +44,20 @@ public class ProductRepo implements IProductRepo {
     }
 
     @Override
-    public void sortPriceAscending() {
-
+    public void search(int id) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (Objects.equals(id, productList.get(i).getId())) {
+                System.out.println(productList.get(i));
+            }
+        }
     }
 
     @Override
-    public void sortPriceDescending() {
+    public void sort() {
+        Collections.sort(productList, new SortProductListByPrice());
+        for (Product p : productList) {
+            System.out.println(p);
+        }
 
     }
 

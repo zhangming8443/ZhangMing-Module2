@@ -14,9 +14,7 @@ public interface IProductRepo {
 
     void edit(Product product);
 
-    void sortPriceAscending();
-
-    void sortPriceDescending();
-
+    void search(int id);
+    void sort();
 
 }

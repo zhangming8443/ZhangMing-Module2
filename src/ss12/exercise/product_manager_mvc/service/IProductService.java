@@ -8,8 +8,6 @@ public interface IProductService {
     void delete();
 
     void edit();
-
-    void sortPriceAscending();
-
-    void sortPriceDescending();
+    void search();
+    void sort();
 }
