@@ -6,9 +6,10 @@ import ss12.exercise.product_manager_mvc.service.ProductService;
 import java.util.Scanner;
 
 public class ProductController {
-    private static ProductService productService = new ProductService();
+    private  ProductService productService = new ProductService();
 
-    public static void showMenu() {
+
+    public  void showMenu() {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
         do {

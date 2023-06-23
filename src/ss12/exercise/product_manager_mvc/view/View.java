@@ -6,7 +6,8 @@ import ss12.exercise.product_manager_mvc.repository.ProductRepo;
 
 public class View {
     public static void main(String[] args) {
-        ProductController.showMenu();
+        ProductController productController = new ProductController();
+        productController.showMenu();
     }
 
 }
