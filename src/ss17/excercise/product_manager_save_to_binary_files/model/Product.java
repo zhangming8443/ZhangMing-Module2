@@ -1,6 +1,8 @@
 package ss17.excercise.product_manager_save_to_binary_files.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int idProduct;
     private String nameProduct;
     private int price;

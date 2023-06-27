@@ -1,4 +1,4 @@
-package ss17.excercise.product_manager_save_to_binary_files.reposirity;
+package ss17.excercise.product_manager_save_to_binary_files.repository;
 
 import ss17.excercise.product_manager_save_to_binary_files.model.Product;
 

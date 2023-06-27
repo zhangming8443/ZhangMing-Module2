@@ -1,14 +1,14 @@
 package ss17.excercise.product_manager_save_to_binary_files.service;
 
 import ss17.excercise.product_manager_save_to_binary_files.model.Product;
-import ss17.excercise.product_manager_save_to_binary_files.reposirity.ProductRepository;
+import ss17.excercise.product_manager_save_to_binary_files.repository.IProductRepository;
+import ss17.excercise.product_manager_save_to_binary_files.repository.ProductRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductService implements IProductService {
-    private final ProductRepository productRepository = new ProductRepository();
+    private final IProductRepository productRepository = new ProductRepository();
     Scanner scanner = new Scanner(System.in);
 
     @Override

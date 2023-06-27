@@ -1,7 +1,7 @@
 package ss17.excercise.product_manager_save_to_binary_files.util;
 
 import ss17.excercise.product_manager_save_to_binary_files.model.Product;
-import ss17.excercise.product_manager_save_to_binary_files.reposirity.ProductRepository;
+import ss17.excercise.product_manager_save_to_binary_files.repository.ProductRepository;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,6 +1,5 @@
-package ss17.excercise.product_manager_save_to_binary_files.util;
+package ss17.excercise.copy_binary_files;
 
-import ss12.practice.sort_with_comparable_and_comparator.Student;
 import ss17.excercise.product_manager_save_to_binary_files.model.Product;
 
 import java.io.*;
@@ -8,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteFileBinary {
-    public static void writeBinaryFile(String pathFile, List<Product> productList) {
+    public static void writeBinaryFile(String pathFile, List<String> productList) {
         File file = new File(pathFile);
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
@@ -23,8 +22,8 @@ public class ReadAndWriteFileBinary {
         }
     }
 
-    public static List<Product> readBinaryFile(String pathFile) {
-        List<Product> productList = new ArrayList<>();
+    public static List<String> readBinaryFile(String pathFile) {
+        List<String > list = new ArrayList<>();
         File file = new File(pathFile);
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
@@ -32,7 +31,7 @@ public class ReadAndWriteFileBinary {
             fileInputStream = new FileInputStream(file);
             if (fileInputStream.available() > 0){
                 objectInputStream = new ObjectInputStream(fileInputStream);
-                    productList = (List<Product>) objectInputStream.readObject();
+                list = (List<String>) objectInputStream.readObject();
                 objectInputStream.close();
                 fileInputStream.close();
             }
@@ -44,6 +43,6 @@ public class ReadAndWriteFileBinary {
         } catch (ClassNotFoundException e) {
             System.out.println("Class not found !");
         }
-        return productList;
+        return list;
     }
 }

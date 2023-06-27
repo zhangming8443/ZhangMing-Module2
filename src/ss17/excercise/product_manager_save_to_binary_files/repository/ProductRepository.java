@@ -1,13 +1,12 @@
-package ss17.excercise.product_manager_save_to_binary_files.reposirity;
+package ss17.excercise.product_manager_save_to_binary_files.repository;
 
 import ss17.excercise.product_manager_save_to_binary_files.model.Product;
-import ss17.excercise.product_manager_save_to_binary_files.model.SortProductsIncrementalPrice;
+import ss17.excercise.product_manager_save_to_binary_files.util.SortProductsIncrementalPrice;
 import ss17.excercise.product_manager_save_to_binary_files.util.ReadAndWriteFile;
 import ss17.excercise.product_manager_save_to_binary_files.util.ReadAndWriteFileBinary;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Objects;
 
 public class ProductRepository implements IProductRepository {

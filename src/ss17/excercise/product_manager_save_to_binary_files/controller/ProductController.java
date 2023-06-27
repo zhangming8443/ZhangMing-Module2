@@ -1,12 +1,12 @@
 package ss17.excercise.product_manager_save_to_binary_files.controller;
 
-import ss17.excercise.product_manager_save_to_binary_files.reposirity.ProductRepository;
+import ss17.excercise.product_manager_save_to_binary_files.service.IProductService;
 import ss17.excercise.product_manager_save_to_binary_files.service.ProductService;
 
 import java.util.Scanner;
 
 public class ProductController {
-    ProductService productService = new ProductService();
+    IProductService productService = new ProductService();
 
     public void showMenu() {
         Scanner scanner = new Scanner(System.in);
