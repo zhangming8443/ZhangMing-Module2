@@ -1,4 +1,4 @@
 package case_study.model;
 
-public class Customer {
+public class Customer extends Person {
 }

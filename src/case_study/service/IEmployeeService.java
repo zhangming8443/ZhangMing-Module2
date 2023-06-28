@@ -1,4 +1,4 @@
 package case_study.service;
 
-public interface IEmployeeService {
+public interface IEmployeeService extends IGeneralService {
 }
