@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteFile {
-    public void writeToFile(List<Product> productList) {
+    public static void writeToFile(List<Product> productList) {
         ProductRepository productRepository = new ProductRepository();
         productList = productRepository.getProductList();
         try {
             FileWriter fileWriter = new FileWriter("E:\\Codegym\\C0423G1-TruongVanHueMinh\\module02\\src\\ss17\\excercise\\product_manager_save_to_binary_files\\data\\product.csv");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Product p : productList) {
-                bufferedWriter.write(p.toString());
+                bufferedWriter.write(p.toInfoCSV());
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();
@@ -25,14 +25,14 @@ public class ReadAndWriteFile {
         }
     }
 
-    public List<Product> readFromFile() {
+    public static List<Product> readFromFile() {
         List<Product> productList = new ArrayList<>();
         try {
             FileReader fileReader = new FileReader("E:\\Codegym\\C0423G1-TruongVanHueMinh\\module02\\src\\ss17\\excercise\\product_manager_save_to_binary_files\\data\\product.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
-                String txt[] = line.split(";");
+                String txt[] = line.split(",");
                 int id = Integer.parseInt(txt[0]);
                 String name = txt[1];
                 int price = Integer.parseInt(txt[2]);

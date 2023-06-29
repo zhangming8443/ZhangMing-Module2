@@ -7,39 +7,38 @@ import ss17.excercise.product_manager_save_to_binary_files.util.ReadAndWriteFile
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class ProductRepository implements IProductRepository {
     private static ArrayList<Product> productList = new ArrayList<>();
-    private final String PRODUCT_PATH_BINARY_FILE = "E:\\Codegym\\C0423G1-TruongVanHueMinh\\module02\\src\\ss17\\excercise\\product_manager_save_to_binary_files\\data\\product.dat";
+    private final String PRODUCT_PATH_BINARY_FILE = "E:\\Codegym\\C0423G1-TruongVanHueMinh\\module02\\src\\ss17\\excercise\\product_manager_save_to_binary_files\\data\\product.csv";
     static ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
-//
-//    static {
-//        Product product1 = new Product(1, "IPHONE 14 PRO MAX", 5000, "Apple", "Telephone");
-//        Product product2 = new Product(2, "SAMSUNG Z FOLD 4", 4900, "Samsung", "Telephone");
-//        Product product3 = new Product(3, "JBL FLIP 6", 2000, "JBL", "Bluetooth speaker");
-//        Product product4 = new Product(4, "MX MASTER 3S", 2000, "Logitech", "Wireless mouse");
-//        Product product5 = new Product(5, "POP KEYS", 2000, "Logitech", "Key board");
-//        productList.add(product1);
-//        productList.add(product2);
-//        productList.add(product3);
-//        productList.add(product4);
-//        productList.add(product5);
-//        readAndWriteFile.writeToFile(productList);
-//        readAndWriteFile.readFromFile();
-//    }
+
+    static {
+        Product product1 = new Product(1, "IPHONE 14 PRO MAX", 5000, "Apple", "Telephone");
+        Product product2 = new Product(2, "SAMSUNG Z FOLD 4", 4900, "Samsung", "Telephone");
+        Product product3 = new Product(3, "JBL FLIP 6", 2000, "JBL", "Bluetooth speaker");
+        Product product4 = new Product(4, "MX MASTER 3S", 2000, "Logitech", "Wireless mouse");
+        Product product5 = new Product(5, "POP KEYS", 2000, "Logitech", "Key board");
+        productList.add(product1);
+        productList.add(product2);
+        productList.add(product3);
+        productList.add(product4);
+        productList.add(product5);
+
+    }
 
     @Override
     public ArrayList<Product> getProductList() {
-        productList = (ArrayList<Product>) ReadAndWriteFileBinary.readBinaryFile(PRODUCT_PATH_BINARY_FILE);
+        productList = (ArrayList<Product>) ReadAndWriteFile.readFromFile();
         return productList;
     }
 
     @Override
     public void addNewProduct(Product product) {
-        productList = (ArrayList<Product>) ReadAndWriteFileBinary.readBinaryFile(PRODUCT_PATH_BINARY_FILE);
         productList.add(product);
-        ReadAndWriteFileBinary.writeBinaryFile(PRODUCT_PATH_BINARY_FILE, productList);
+        ReadAndWriteFile.writeToFile(productList);
     }
 
     @Override

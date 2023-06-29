@@ -60,9 +60,15 @@ public class Product implements Serializable {
         this.describe = describe;
     }
 
+    public String toInfoCSV() {
+        return idProduct + "," +
+                nameProduct + "," + price +
+                "," + manufacturers + "," + describe;
+    }
+
     @Override
     public String toString() {
-        return  "ID=" + idProduct +
+        return "ID=" + idProduct +
                 ", Product Name='" + nameProduct + '\'' +
                 ", Price=" + price +
                 ", manufacturers='" + manufacturers + '\'' +

@@ -1,4 +1,20 @@
 package case_study.repository;
 
-public interface IFacilityRepository extends IGeneralRepository{
+import case_study.model.Facility;
+
+import java.util.List;
+
+public interface IFacilityRepository extends IGeneralRepository<Facility>{
+    @Override
+    default List<Facility> display() {
+        return null;
+    }
+
+    @Override
+    default void addNew(Facility facility) {
+
+    }
+    default List<Facility> displayListFacilityMaintenance(){
+        return null;
+    }
 }

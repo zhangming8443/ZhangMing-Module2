@@ -1,5 +1,4 @@
 package case_study.service;
 
-public class GeneralService {
-
+public class ContractService {
 }
