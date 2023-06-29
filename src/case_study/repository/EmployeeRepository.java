@@ -8,18 +8,17 @@ import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
 
-    private static final String PATH_EMPLOYEE = "src/case_study/data/employee.csv";
-    private static List<Employee> employeeList = new ArrayList<>();
+    private final String PATH_EMPLOYEE = "src/case_study/data/employee.csv";
+    private List<Employee> employeeList = new ArrayList<>();
 
     @Override
     public List<Employee> display() {
-        List<String> stringList = new ArrayList<>();
-        stringList = ReadAndWriteFile.readToFile(PATH_EMPLOYEE);
+        List<String> stringList = ReadAndWriteFile.readToFile(PATH_EMPLOYEE);
         employeeList.clear();
-        String[] info;
+        String[] property;
         for (String str : stringList) {
-            info = str.split(",");
-            employeeList.add(new Employee(info[0], info[1], info[2], info[3], info[4], info[5], info[6], info[7], Integer.parseInt(info[8])));
+            property = str.split(",");
+            employeeList.add(new Employee(property[0], property[1], property[2], property[3], property[4], property[5], property[6], property[7], Integer.parseInt(property[8])));
         }
         return employeeList;
     }
@@ -27,7 +26,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     @Override
     public void addNew(Employee employee) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(employee.toInfoCSV());
+        stringList.add(employee.toFileCSV());
         ReadAndWriteFile.writeToFile(PATH_EMPLOYEE, stringList, true);
     }
 
@@ -39,7 +38,7 @@ public class EmployeeRepository implements IEmployeeRepository {
             if (e.getEmployeeCode().equals(employeeCode)) {
                 e = employee;
             }
-            stringList.add(e.toInfoCSV());
+            stringList.add(e.toFileCSV());
         }
         ReadAndWriteFile.writeToFile(PATH_EMPLOYEE, stringList, false);
     }

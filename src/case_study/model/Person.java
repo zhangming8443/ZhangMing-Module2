@@ -60,11 +60,10 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return
-                "name='" + name + '\'' +
-                ", date='" + date + '\'' +
-                ", identityCard='" + identityCard + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email ;
+        return " | Name: " + name
+                + " | Date: " + date
+                + " | Identity Card: " + identityCard
+                + " | PhoneNumber: " + phoneNumber
+                + " | Email: " + email;
     }
 }

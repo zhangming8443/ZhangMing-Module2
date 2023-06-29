@@ -3,16 +3,15 @@ package case_study.model;
 public class Employee extends Person {
     private String employeeCode;
     private String degree;
-    //Trung cấp, Cao đẳng, Đại học và Sau đại học
     private String duty;
-    //lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám đốc.
+
     private int salary;
 
     public Employee() {
     }
 
-    public Employee(String employeeCode, String name, String date, String identityCard, String sdt, String email, String degree, String duty, int salary) {
-        super(name, date, identityCard, sdt, email);
+    public Employee(String employeeCode, String name, String date, String identityCard, String phoneNumber, String email, String degree, String duty, int salary) {
+        super(name, date, identityCard, phoneNumber, email);
         this.employeeCode = employeeCode;
         this.degree = degree;
         this.duty = duty;
@@ -50,17 +49,19 @@ public class Employee extends Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-    public String toInfoCSV() {
-        return this.getEmployeeCode()+","+ this.getName()+","+this.getDate()+","+this.getIdentityCard()+","+this.getPhoneNumber()+","+this.getEmail()+","+this.getDegree()+","+this.getDuty()+","+this.getSalary();
+
+    public String toFileCSV() {
+        return this.getEmployeeCode() + "," + this.getName() + "," + this.getDate() + "," + this.getIdentityCard() + "," + this.getPhoneNumber() + "," + this.getEmail() + "," + this.getDegree() + "," + this.getDuty() + "," + this.getSalary();
     }
 
     @Override
     public String toString() {
-        return "Employee{" + super.toString()+
-                ", employeeCode='" + employeeCode + '\'' +
-                ", degree='" + degree + '\'' +
-                ", duty='" + duty + '\'' +
-                ", salary=" + salary +
-                '}';
+        return "EMPLOYEE {"
+                + "Employee code: " + employeeCode
+                + super.toString()
+                + " | Degree: " + degree
+                + " | Duty: " + duty
+                + " | Salary: " + salary
+                + '}';
     }
 }

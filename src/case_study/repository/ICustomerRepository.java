@@ -4,7 +4,7 @@ import case_study.model.Customer;
 
 import java.util.List;
 
-public interface ICustomerRepository extends IGeneralRepository<Customer>{
+public interface ICustomerRepository extends IGeneralRepository<Customer> {
     @Override
     default List display() {
         return null;
@@ -15,7 +15,8 @@ public interface ICustomerRepository extends IGeneralRepository<Customer>{
 
     }
 
-    default void edit(Customer customer) {
-
+    default void edit(String customerCode, Customer customer) {
     }
+
+    Customer getByCustomerCode(String customerCode);
 }

@@ -9,8 +9,8 @@ public class Customer extends Person {
     public Customer() {
     }
 
-    public Customer(String name, String date, String identityCard, String sdt, String email, String customerCode, String guestType, String address) {
-        super(name, date, identityCard, sdt, email);
+    public Customer(String customerCode, String name, String date, String identityCard, String phoneNumber, String email, String guestType, String address) {
+        super(name, date, identityCard, phoneNumber, email);
         this.customerCode = customerCode;
         this.guestType = guestType;
         this.address = address;
@@ -40,12 +40,17 @@ public class Customer extends Person {
         this.address = address;
     }
 
+    public String toFileCSV() {
+        return this.getCustomerCode() + "," + this.getName() + "," + this.getDate() + "," + this.getIdentityCard() + "," + this.getPhoneNumber() + "," + this.getEmail() + "," + this.getGuestType() + "," + this.getAddress();
+    }
+
     @Override
     public String toString() {
-        return "Customer{" +
-                "customerCode='" + customerCode + '\'' +
-                ", guestType='" + guestType + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+        return "CUSTOMER {"
+                + "Customer code: " + customerCode
+                + super.toString()
+                + " | Guest type: " + guestType
+                + " | Address: " + address
+                + '}';
     }
 }
