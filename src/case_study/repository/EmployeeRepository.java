@@ -8,12 +8,13 @@ import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
 
-    private final String PATH_EMPLOYEE = "src/case_study/data/employee.csv";
-    private List<Employee> employeeList = new ArrayList<>();
+    private static final String PATH_EMPLOYEE = "src/case_study/data/employee.csv";
+    private static List<Employee> employeeList = new ArrayList<>();
 
     @Override
     public List<Employee> display() {
-        List<String> stringList = ReadAndWriteFile.readToFile(PATH_EMPLOYEE);
+        List<String> stringList = new ArrayList<>();
+        stringList = ReadAndWriteFile.readToFile(PATH_EMPLOYEE);
         employeeList.clear();
         String[] property;
         for (String str : stringList) {
@@ -26,7 +27,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     @Override
     public void addNew(Employee employee) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(employee.toFileCSV());
+        stringList.add(employee.toInfoCSV());
         ReadAndWriteFile.writeToFile(PATH_EMPLOYEE, stringList, true);
     }
 
@@ -38,7 +39,7 @@ public class EmployeeRepository implements IEmployeeRepository {
             if (e.getEmployeeCode().equals(employeeCode)) {
                 e = employee;
             }
-            stringList.add(e.toFileCSV());
+            stringList.add(e.toInfoCSV());
         }
         ReadAndWriteFile.writeToFile(PATH_EMPLOYEE, stringList, false);
     }

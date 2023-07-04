@@ -1,13 +1,14 @@
 package case_study.controller;
 
-import case_study.service.CustomerService;
+import case_study.service.class_service.CustomerService;
+import case_study.service.interface_service.ICustomerService;
 
 import java.util.Scanner;
 
 public class CustomerController {
     public void displayCustomerMenu() {
         Scanner scanner = new Scanner(System.in);
-        CustomerService customerService = new CustomerService();
+        ICustomerService customerService = new CustomerService();
         boolean flagCustomer = true;
         do {
             try {

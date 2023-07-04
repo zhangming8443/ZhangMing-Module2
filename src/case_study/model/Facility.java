@@ -7,11 +7,7 @@ public abstract class Facility {
     private int rentalCost;
     private int maxNumberOfPeoples;
     private String rentalType;
-    //bao gồm thuê theo năm, tháng, ngày, giờ.
 
-    /*^((?!(?:[02468][^048]|[13579][^26])00-FEB-29)(?:19|[2-9]\d)(?!(?:[02468][^048]|[13579][^26])-FEB-29)\d\d)-(?!FEB-3[01])(?
-     !(?:APR|JUN|SEP|NOV)-31)(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-(?!00)((?:[0-2][0-9]|3[0|1])),([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$*/
-    //2023-JAN-31,13:30
     public Facility() {
     }
 
