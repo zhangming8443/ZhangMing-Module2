@@ -1,7 +1,9 @@
 package case_study.service.class_service;
 
 import case_study.model.facility.Facility;
+import case_study.model.facility.House;
 import case_study.model.facility.Room;
+import case_study.model.facility.Villa;
 import case_study.repository.class_repository.FacilityRepository;
 import case_study.repository.interface_repository.IFacilityRepository;
 import case_study.service.interface_service.IFacilityService;
@@ -38,12 +40,33 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void addVilla() {
-
+        String serviceCode = Regex.checkVillaFacility();
+        String serviceName = "Villa";
+        double area = Regex.checkArea();
+        int rentalCost = Regex.checkRentalCost();
+        int maximumPeople = Regex.checkMaximumPeople();
+        String rentalType = Regex.choiceRentalType();
+        String roomStandard = Regex.choiceRoomStandard();
+        double poolArea = Regex.checkPoolArea();
+        int numberOfFloors = Regex.checkNumberOfFloors();
+        Facility villa = new Villa(serviceCode, serviceName, area, rentalCost, maximumPeople, rentalType, roomStandard, poolArea, numberOfFloors);
+        facilityRepository.addNew(villa);
+        System.out.println("COMPLETE ADD NEW ROOM !");
     }
 
     @Override
     public void addHouse() {
-
+        String serviceCode = Regex.checkHouseFacility();
+        String serviceName = "House";
+        double area = Regex.checkArea();
+        int rentalCost = Regex.checkRentalCost();
+        int maximumPeople = Regex.checkMaximumPeople();
+        String rentalType = Regex.choiceRentalType();
+        String roomStandard = Regex.choiceRoomStandard();
+        int numberOfFloors = Regex.checkNumberOfFloors();
+        Facility house = new House(serviceCode, serviceName, area, rentalCost, maximumPeople, rentalType, roomStandard, numberOfFloors);
+        facilityRepository.addNew(house);
+        System.out.println("COMPLETE ADD NEW ROOM !");
     }
 
     @Override

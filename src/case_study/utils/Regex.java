@@ -354,6 +354,19 @@ public class Regex {
         return area;
     }
 
+    public static double checkPoolArea() {
+        int areaPool = -1;
+        do {
+            try {
+                System.out.println("Enter the pool area: ");
+                areaPool = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Enter the number. Please !");
+            }
+        } while (areaPool < 30);
+        return areaPool;
+    }
+
     public static int checkRentalCost() {
         int rentalCost = -1;
         do {
@@ -365,6 +378,19 @@ public class Regex {
             }
         } while (rentalCost < 0);
         return rentalCost;
+    }
+
+    public static int checkNumberOfFloors() {
+        int floors = -1;
+        do {
+            try {
+                System.out.println("Enter the number of floor: ");
+                floors = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Enter the number. Please !");
+            }
+        } while (floors < 0);
+        return floors;
     }
 
     public static int checkMaximumPeople() {
@@ -379,4 +405,29 @@ public class Regex {
         } while (!(max > 0 && max < 20));
         return max;
     }
+
+    public static String choiceRoomStandard() {
+        String roomStandard = null;
+        boolean flag = true;
+        do {
+            System.out.println("Choice room standard: "
+                    + "\n1. Standard"
+                    + "\n2. Superior"
+                    + "\n3. Deluxe"
+                    + "\n4. Suite");
+            String choice = scanner.nextLine();
+            switch (choice) {
+                case "1":
+                    return roomStandard = "Standard";
+                case "2":
+                    return roomStandard = "Superior";
+                case "3":
+                    return roomStandard = "Deluxe";
+                case "4":
+                    return roomStandard = "DinnSuiteer";
+            }
+        } while (flag);
+        return roomStandard;
+    }
 }
+
